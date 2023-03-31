@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --image-1: url('img/img1.jpg');
+  --image-2: url('img/img2.jpg');
+  --image-3: url('img/img3.jpg');
+  --image-4: url('img/img4.jpg');
+  --image-5: url('img/img5.jpg');
+  --carousels-background-color: rgb(78, 75, 75) 
+}
+
+.sliderContainer {
+  background: var(--carousels-background-color);
+  min-height: 45vh;
+}
+
+.sliderWrapper {
+  display: flex;
+  margin: auto;
+  max-width: 1200px;
+  overflow: hidden;
+  padding: 2vh 2vw;
+}
+
+.imgContainers {
+  position: relative;
+  width: 100%;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.sliderImg {
+  width: 370px;
+  height: 40vh;
+  transform-style: preserve-3d;
+  background-position: center;
+  transition: all 0.3s;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 20%;
+}
+
+.sliderImg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100%;
+  transform: rotateY(90deg);
+  transform-origin: 0 50%;
+  filter: brightness(70%);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.sliderImg:hover {
+  transform: rotateY(50deg) scale(1.1);
+}
+.slider:hover::before {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.slider1 {
+  background-image: var(--image-1);
+}
+.slider1::before {
+  background-image: var(--image-1);
+}
+
+.slider2 {
+  background-image: var(--image-2);
+}
+.slider2::before {
+  background-image: var(--image-2);
+}
+
+.slider3 {
+  background-image: var(--image-3);
+}
+.slider3::before {
+  background-image: var(--image-3);
+}
+
+.slider4 {
+  background-image: var(--image-4);
+}
+.slider4::before {
+  background-image: var(--image-4);
+}
+
+.slider5 {
+  background-image: var(--image-5);
+}
+.slider5::before {
+  background-image: var(--image-5);
+}
+
+.imgButton {
+  font-size: 1.5em;
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  cursor: pointer;
+  text-decoration: underline;
+  color: white;
+  opacity: 1;
+}
+
+
+
+.exitCross {
+  cursor: pointer;
+}
+.exitCross:after {
+  display: inline-block;
+  content: '\00d7';
+  color: white;
+  font-size: 50px;
+}
+
+#itemToShow{
+  display: none;
+  margin: auto;
+  max-width: 1200px;
+  overflow: hidden;
+  padding: 2vh 2vw;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#itemToShow div{
+  width: 33%;
+  margin-right: 0;
+}
+
+#exit{
+  width: 20% !important;
+}
+
+#idToRemove{
+  transform: rotateY(50deg) scale(1.1);
+}
